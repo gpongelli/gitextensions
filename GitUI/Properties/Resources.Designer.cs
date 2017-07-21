@@ -161,16 +161,36 @@ namespace GitUI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap certificate_error {
+            get {
+                object obj = ResourceManager.GetObject("certificate_error", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap certificate_ok {
+            get {
+                object obj = ResourceManager.GetObject("certificate_ok", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Changelog
         ///=========
-        ///### Version 2.49 (no due date)
-        ///* Cherry pick selected file/selected lines.
-        ///* Added an option to remember the ignore-white-spaces preference for all the diff viewers.
-        ///* Fixed an intermittent bug where ObjectDisposedException occurs on launch.
-        ///* Fixed a bug where branch filter throws null reference exception when no repository selected
-        ///### Version 2.48.05 (16 May 2015)
-        ///* Fixed issue #2493: StartBrowseDialog failed after clone
-        ///* Fixed issue #2783: Fixed crash when right click on bl [rest of string was truncated]&quot;;.
+        ///### [Version 2.50.01] (07 July 2017)
+        ///
+        ///#### Fixes: 
+        ///* Push branch with no upstream defaults to first remote and not to &quot;origin&quot; - Issue [3821]
+        ///* [Bug] after 2.50 unable to use &quot;Revert selected lines&quot; from commit window - Issue [3819]
+        ///* [Bug / Regression] It is not possible to run an external difftool (F3) in the diff view of &quot;Commit index / Current unstaged changes&quot; - Issue [3814]
+        ///* Merge Conflict contextmenu items are disabled in 2.5.0 - Issue [3809]
+        ///* GitExtensions gives continuous Syst [stringa troncata]&quot;;.
         /// </summary>
         internal static string ChangeLog {
             get {
@@ -1472,6 +1492,26 @@ namespace GitUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap light_bulb_icon_off_16 {
+            get {
+                object obj = ResourceManager.GetObject("light_bulb_icon_off_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap light_bulb_icon_on_16 {
+            get {
+                object obj = ResourceManager.GetObject("light_bulb_icon_on_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loadingpanel_animated {
             get {
                 object obj = ResourceManager.GetObject("loadingpanel_animated", resourceCulture);
@@ -1761,9 +1801,9 @@ namespace GitUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap light_bulb_icon_off_16 {
+        internal static System.Drawing.Bitmap tag_error {
             get {
-                object obj = ResourceManager.GetObject("light_bulb_icon_off_16", resourceCulture);
+                object obj = ResourceManager.GetObject("tag_error", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1771,9 +1811,9 @@ namespace GitUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap light_bulb_icon_on_16 {
+        internal static System.Drawing.Bitmap tag_ok {
             get {
-                object obj = ResourceManager.GetObject("light_bulb_icon_on_16", resourceCulture);
+                object obj = ResourceManager.GetObject("tag_ok", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

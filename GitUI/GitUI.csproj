@@ -1854,6 +1854,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Icons\certificate_error.png" />
+    <Content Include="Resources\Icons\certificate_ok.png" />
     <Content Include="Resources\Icons\14.png" />
     <Content Include="Resources\Icons\2.png" />
     <Content Include="Resources\Icons\21.png" />
@@ -1892,6 +1894,8 @@
     <None Include="Resources\Icons\light-bulb-icon-on-16.png" />
     <None Include="Resources\Icons\light-bulb-icon-off-16.png" />
     <Content Include="Resources\Icons\whitespace.png" />
+    <Content Include="Resources\Icons\tag_error.png" />
+    <Content Include="Resources\Icons\tag_ok.png" />
     <Content Include="Translation\Czech.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
