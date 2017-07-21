@@ -45,6 +45,7 @@
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.chkShowRelativeDate = new System.Windows.Forms.CheckBox();
             this.chkShowCurrentBranchInVisualStudio = new System.Windows.Forms.CheckBox();
+            this.chkShowGpgInformation = new System.Windows.Forms.CheckBox();
             this.chkEnableAutoScale = new System.Windows.Forms.CheckBox();
             this.truncateLongFilenames = new System.Windows.Forms.Label();
             this.truncatePathMethod = new System.Windows.Forms.ComboBox();
@@ -78,7 +79,7 @@
             this.groupBox13.Controls.Add(this.downloadDictionary);
             this.groupBox13.Controls.Add(this.Language);
             this.groupBox13.Controls.Add(this.helpTranslate);
-            this.groupBox13.Location = new System.Drawing.Point(3, 443);
+            this.groupBox13.Location = new System.Drawing.Point(3, 460);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(1781, 84);
             this.groupBox13.TabIndex = 60;
@@ -156,7 +157,7 @@
             this.groupBox15.Controls.Add(this.applicationFontChangeButton);
             this.groupBox15.Controls.Add(this.label26);
             this.groupBox15.Controls.Add(this.label56);
-            this.groupBox15.Location = new System.Drawing.Point(3, 322);
+            this.groupBox15.Location = new System.Drawing.Point(3, 340);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(1777, 115);
             this.groupBox15.TabIndex = 59;
@@ -233,11 +234,12 @@
             this.groupBox14.Controls.Add(this.chkShowRelativeDate);
             this.groupBox14.Controls.Add(this.chkShowCurrentBranchInVisualStudio);
             this.groupBox14.Controls.Add(this.chkEnableAutoScale);
+            this.groupBox14.Controls.Add(this.chkShowGpgInformation);
             this.groupBox14.Controls.Add(this.truncateLongFilenames);
             this.groupBox14.Controls.Add(this.truncatePathMethod);
             this.groupBox14.Location = new System.Drawing.Point(3, 3);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(1777, 136);
+            this.groupBox14.Size = new System.Drawing.Size(1777, 160);
             this.groupBox14.TabIndex = 57;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "General";
@@ -262,21 +264,31 @@
             this.chkShowCurrentBranchInVisualStudio.Text = "Show current branch in Visual Studio";
             this.chkShowCurrentBranchInVisualStudio.UseVisualStyleBackColor = true;
             // 
+            // chkShowGpgInformation
+            // 
+            this.chkShowGpgInformation.AutoSize = true;
+            this.chkShowGpgInformation.Location = new System.Drawing.Point(10, 75);
+            this.chkShowGpgInformation.Name = "chkShowGpgInformation";
+            this.chkShowGpgInformation.Size = new System.Drawing.Size(200, 17);
+            this.chkShowGpgInformation.TabIndex = 3;
+            this.chkShowGpgInformation.Text = "Show GPG information";
+            this.chkShowGpgInformation.UseVisualStyleBackColor = true;
+            // 
             // chkEnableAutoScale
             // 
             this.chkEnableAutoScale.AutoSize = true;
-            this.chkEnableAutoScale.Location = new System.Drawing.Point(10, 75);
+            this.chkEnableAutoScale.Location = new System.Drawing.Point(10, 104);
             this.chkEnableAutoScale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkEnableAutoScale.Name = "chkEnableAutoScale";
             this.chkEnableAutoScale.Size = new System.Drawing.Size(254, 17);
-            this.chkEnableAutoScale.TabIndex = 3;
+            this.chkEnableAutoScale.TabIndex = 4;
             this.chkEnableAutoScale.Text = "Auto scale user interface when high DPI is used";
             this.chkEnableAutoScale.UseVisualStyleBackColor = true;
             // 
             // truncateLongFilenames
             // 
             this.truncateLongFilenames.AutoSize = true;
-            this.truncateLongFilenames.Location = new System.Drawing.Point(10, 104);
+            this.truncateLongFilenames.Location = new System.Drawing.Point(10, 130);
             this.truncateLongFilenames.Name = "truncateLongFilenames";
             this.truncateLongFilenames.Size = new System.Drawing.Size(121, 13);
             this.truncateLongFilenames.TabIndex = 5;
@@ -290,7 +302,7 @@
             "Compact",
             "Trim start",
             "Filename only"});
-            this.truncatePathMethod.Location = new System.Drawing.Point(221, 101);
+            this.truncatePathMethod.Location = new System.Drawing.Point(221, 130);
             this.truncatePathMethod.Name = "truncatePathMethod";
             this.truncatePathMethod.Size = new System.Drawing.Size(242, 21);
             this.truncatePathMethod.TabIndex = 6;
@@ -308,7 +320,7 @@
             this.groupBox6.Controls.Add(this.label44);
             this.groupBox6.Controls.Add(this.ClearImageCache);
             this.groupBox6.Controls.Add(this.ShowAuthorGravatar);
-            this.groupBox6.Location = new System.Drawing.Point(3, 145);
+            this.groupBox6.Location = new System.Drawing.Point(3, 165);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(1777, 171);
             this.groupBox6.TabIndex = 58;
@@ -464,6 +476,7 @@
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.CheckBox chkShowRelativeDate;
         private System.Windows.Forms.CheckBox chkShowCurrentBranchInVisualStudio;
+        private System.Windows.Forms.CheckBox chkShowGpgInformation;
         private System.Windows.Forms.CheckBox chkEnableAutoScale;
         private System.Windows.Forms.Label truncateLongFilenames;
         private System.Windows.Forms.ComboBox truncatePathMethod;
