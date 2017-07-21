@@ -1811,6 +1811,16 @@ namespace GitUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tag_many {
+            get {
+                object obj = ResourceManager.GetObject("tag_many", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tag_ok {
             get {
                 object obj = ResourceManager.GetObject("tag_ok", resourceCulture);
