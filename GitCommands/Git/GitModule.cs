@@ -1191,6 +1191,11 @@ namespace GitCommands
             return revision;
         }
 
+        public string GetCommitGpgStatus(string commit)
+        {
+            return RunGitCmd($"log --pretty=\"format:%G?\" -1 {commit}");
+        }
+
         public string[] GetParents(string commit)
         {
             string output = RunGitCmd("log -n 1 --format=format:%P \"" + commit + "\"");

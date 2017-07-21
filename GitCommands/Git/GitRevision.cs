@@ -44,6 +44,7 @@ namespace GitCommands
         public string Committer { get; set; }
         public string CommitterEmail { get; set; }
         public DateTime CommitDate { get; set; }
+        public string SignInfo { get; set; }
 
         public BuildInfo BuildStatus
         {

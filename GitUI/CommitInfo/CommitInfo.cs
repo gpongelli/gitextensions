@@ -141,6 +141,8 @@ namespace GitUI.CommitInfo
             _RevisionHeader.Text = string.Empty;
             _RevisionHeader.Refresh();
 
+            _revision.SignInfo = Module.GetCommitGpgStatus(_revision.Guid);
+
             string error = "";
             CommitData data = CommitData.CreateFromRevision(_revision);
             if (_revision.Body == null)
