@@ -121,6 +121,7 @@ namespace GitUI.CommitInfo
         private string _branchInfo;
         private IList<string> _sortedRefs;
         private System.Drawing.Rectangle _headerResize; // Cache desired size for commit header
+        private string tagGpgMessage;
 
         private void ReloadCommitInfo()
         {
@@ -173,6 +174,22 @@ namespace GitUI.CommitInfo
 
             if (AppSettings.CommitInfoShowContainedInTags)
                 ThreadPool.QueueUserWorkItem(_ => loadTagInfo(_revision.Guid));
+
+
+            commitSignPicture.Visible = tagSignPicture.Visible = AppSettings.ShowGpgInformation;
+
+            if (AppSettings.ShowGpgInformation)
+            {
+                ThreadPool.QueueUserWorkItem(_ => loadCommitSignInfo(_revision));
+
+                int nTag = getNumberOfTagHere(_revision);
+                this.tagSignPicture.Visible = (nTag > 0);
+
+                if (nTag > 0)
+                {
+                    ThreadPool.QueueUserWorkItem(_ => loadTagSignInfo(_revision));
+                }
+            }
         }
 
         /// <summary>
@@ -276,6 +293,70 @@ namespace GitUI.CommitInfo
             _tags = Module.GetAllTagsWhichContainGivenCommit(revision).ToList();
             this.InvokeAsync(updateText);
         }
+
+
+        private void loadCommitSignInfo(GitRevision revision)
+        {
+            /* Good commit signature */
+            if (revision.SignInfo == "G")
+            {
+                commitSignPicture.Image = GitUI.Properties.Resources.certificate_ok;
+            }
+            else /* Any kind of not good commit signature */
+            {
+                commitSignPicture.Image = GitUI.Properties.Resources.certificate_error;
+            }
+        }
+
+
+        private int getNumberOfTagHere(GitRevision revision)
+        {
+            int nTagHere = 0;
+
+            foreach (GitRef gitRef in revision.Refs)
+            {
+                if (gitRef.IsTag && gitRef.IsDereference)
+                {
+                    nTagHere++;
+                }
+            }
+
+            return nTagHere;
+        }
+
+        private void loadTagSignInfo(GitRevision revision)
+        {
+            tagGpgMessage = "";
+            int tagCnt = 0;
+
+            foreach (GitRef gitRef in revision.Refs)
+            {
+                if (gitRef.IsTag && gitRef.IsDereference)
+                {
+                    tagGpgMessage = $"{tagGpgMessage}{gitRef.LocalName}\r\n{Module.GetTagGpgRawVerificationMessage(gitRef.LocalName)}\r\n\r\n";
+
+                    Regex tagRegex = new Regex("Good signature");
+                    Match match = tagRegex.Match(tagGpgMessage);
+
+                    if (match.Success)
+                    {
+                        tagSignPicture.Image = GitUI.Properties.Resources.tag_ok;
+                    }
+                    else
+                    {
+                        tagSignPicture.Image = GitUI.Properties.Resources.tag_error;
+                    }
+
+                    tagCnt++;
+                }
+            }
+
+            if (tagCnt > 1)
+            {
+                tagSignPicture.Image = GitUI.Properties.Resources.tag_many;
+            }
+        }
+
 
         private void loadBranchInfo(string revision)
         {
@@ -596,5 +677,14 @@ namespace GitUI.CommitInfo
             _headerResize = e.NewRectangle;
         }
 
+        private void commitSignPicture_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show(Module.GetGpgRawVerificationMessage(_revision.Guid), "GPG Commit Info", MessageBoxButtons.OK);
+        }
+
+        private void tagSignPicture_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show(tagGpgMessage, "GPG Tag Info", MessageBoxButtons.OK);
+        }
     }
 }

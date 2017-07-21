@@ -2806,6 +2806,35 @@ namespace GitCommands
         }
 
         /// <summary>
+        /// Returns commit raw verification message from GPG.
+        /// </summary>
+        public string GetGpgRawVerificationMessage(string guid)
+        {
+            if (string.IsNullOrWhiteSpace(guid))
+                return null;
+
+            string returnString = RunGitCmd($"log --pretty=\"format:%GG\" -1 {guid}");
+
+            if (returnString.IsNullOrEmpty())
+            {
+                returnString = "No signature";
+            }
+
+            return returnString;
+        }
+
+        /// <summary>
+        /// Returns tag raw verification message from GPG.
+        /// </summary>
+        public string GetTagGpgRawVerificationMessage(string tag)
+        {
+            if (string.IsNullOrWhiteSpace(tag))
+                return null;
+
+            return RunGitCmd($"tag -v {tag}");
+        }
+
+        /// <summary>
         /// Returns list of filenames which would be ignored
         /// </summary>
         /// <param name="ignorePatterns">Patterns to ignore (.gitignore syntax)</param>
