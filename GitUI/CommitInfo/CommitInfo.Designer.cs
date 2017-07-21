@@ -43,6 +43,8 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.addNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._RevisionHeader = new System.Windows.Forms.RichTextBox();
+            this.commitSignPicture = new System.Windows.Forms.PictureBox();
+            this.tagSignPicture = new System.Windows.Forms.PictureBox();
             this.tableLayout.SuspendLayout();
             this.commitInfoContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -52,12 +54,14 @@
             this.tableLayout.AutoSize = true;
             this.tableLayout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayout.BackColor = System.Drawing.SystemColors.Window;
-            this.tableLayout.ColumnCount = 2;
+            this.tableLayout.ColumnCount = 4;
             this.tableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayout.Controls.Add(this.gravatar1, 0, 0);
             this.tableLayout.Controls.Add(this.RevisionInfo, 1, 1);
             this.tableLayout.Controls.Add(this._RevisionHeader, 1, 0);
+            this.tableLayout.Controls.Add(this.tagSignPicture, 2, 0);
+            this.tableLayout.Controls.Add(this.commitSignPicture, 3, 0);
             this.tableLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayout.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayout.Location = new System.Drawing.Point(0, 0);
@@ -187,6 +191,24 @@
             this._RevisionHeader.ContentsResized += new System.Windows.Forms.ContentsResizedEventHandler(this._RevisionHeader_ContentsResized);
             this._RevisionHeader.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.RevisionInfoLinkClicked);
             this._RevisionHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this._RevisionHeader_MouseDown);
+            //
+            // tagSignPicture
+            //
+            this.tagSignPicture.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tagSignPicture.Visible = false;
+            this.tagSignPicture.Name = "tagSignPicture";
+            this.tagSignPicture.Location = new System.Drawing.Point(3, 3);
+            this.tagSignPicture.Size = new System.Drawing.Size(48, 48);
+            this.tagSignPicture.Click += new System.EventHandler(this.tagSignPicture_Click);
+            //
+            // commitSignPicture
+            //
+            this.commitSignPicture.Dock = System.Windows.Forms.DockStyle.Right;
+            this.commitSignPicture.Visible = false;
+            this.commitSignPicture.Name = "commitSignPicture";
+            this.commitSignPicture.Location = new System.Drawing.Point(3, 3);
+            this.commitSignPicture.Size = new System.Drawing.Size(48, 48);
+            this.commitSignPicture.Click += new System.EventHandler(this.commitSignPicture_Click);
             // 
             // CommitInfo
             // 
@@ -211,6 +233,8 @@
         private System.Windows.Forms.ToolStripMenuItem showContainedInBranchesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showContainedInTagsToolStripMenuItem;
         private System.Windows.Forms.RichTextBox _RevisionHeader;
+        private System.Windows.Forms.PictureBox commitSignPicture;
+        private System.Windows.Forms.PictureBox tagSignPicture;
         private System.Windows.Forms.ToolStripMenuItem copyCommitInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem showContainedInBranchesRemoteToolStripMenuItem;
