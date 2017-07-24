@@ -354,7 +354,7 @@ namespace GitUI.CommitInfo
 
             if (tagCnt > 1)
             {
-                tagSignPicture.Image = GitUI.Properties.Resources.tag_many;
+                this.InvokeAsync(() => { tagSignPicture.Image = GitUI.Properties.Resources.tag_many; });
             }
         }
 
