@@ -125,7 +125,8 @@ namespace GitUI.CommitInfo
 
         private void ReloadCommitInfo()
         {
-            _RevisionHeader.BackColor = ColorHelper.MakeColorDarker(this.BackColor);
+            _RevisionHeader.BackColor =
+                tlpnlRevisionHeader.BackColor = ColorHelper.MakeColorDarker(this.BackColor);
 
             showContainedInBranchesToolStripMenuItem.Checked = AppSettings.CommitInfoShowContainedInBranchesLocal;
             showContainedInBranchesRemoteToolStripMenuItem.Checked = AppSettings.CommitInfoShowContainedInBranchesRemote;
