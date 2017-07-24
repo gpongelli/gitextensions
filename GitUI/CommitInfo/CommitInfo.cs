@@ -1,4 +1,4 @@
-﻿﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -301,11 +301,11 @@ namespace GitUI.CommitInfo
             /* Good commit signature */
             if (revision.SignInfo == "G")
             {
-                commitSignPicture.Image = GitUI.Properties.Resources.certificate_ok;
+                this.InvokeAsync(() => { commitSignPicture.Image = GitUI.Properties.Resources.certificate_ok; });
             }
             else /* Any kind of not good commit signature */
             {
-                commitSignPicture.Image = GitUI.Properties.Resources.certificate_error;
+                this.InvokeAsync(() => { commitSignPicture.Image = GitUI.Properties.Resources.certificate_error; });
             }
         }
 
@@ -341,11 +341,11 @@ namespace GitUI.CommitInfo
 
                     if (match.Success)
                     {
-                        tagSignPicture.Image = GitUI.Properties.Resources.tag_ok;
+                        this.InvokeAsync(() => { tagSignPicture.Image = GitUI.Properties.Resources.tag_ok; });
                     }
                     else
                     {
-                        tagSignPicture.Image = GitUI.Properties.Resources.tag_error;
+                        this.InvokeAsync(() => { tagSignPicture.Image = GitUI.Properties.Resources.tag_error; });
                     }
 
                     tagCnt++;
